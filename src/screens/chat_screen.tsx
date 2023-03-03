@@ -1,14 +1,11 @@
 import React from "react";
-import chats from "../../assets/data/chats.json";
-import { FlatList } from "react-native";
-import { ChatListItem } from "../components";
+import { View, Text, ImageBackground } from "react-native";
+import Background from "../../assets/images/BG.png";
 
 export function ChatScreen() {
   return (
-    <FlatList
-      data={chats}
-      renderItem={({ item }) => <ChatListItem chat={item} />}
-      keyExtractor={(item) => item.id}
-    />
+    <ImageBackground source={Background} className="flex-1">
+      <Text>Chat Screen</Text>
+    </ImageBackground>
   );
 }
