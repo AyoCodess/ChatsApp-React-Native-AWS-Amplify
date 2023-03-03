@@ -42,7 +42,7 @@ export function ChatListItem(props: ChatListItemProps) {
             {chat.user.name}
           </Text>
           <Text className="text-gray-500">
-            {dayjs(chat.lastMessage.createdAt).fromNow()}
+            {dayjs(chat.lastMessage.createdAt).fromNow(true)}
           </Text>
         </View>
         <Text numberOfLines={2} className=" text-gray-500">
