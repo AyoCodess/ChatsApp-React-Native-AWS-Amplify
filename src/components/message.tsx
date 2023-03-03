@@ -23,8 +23,8 @@ export function Message({ message }: Props) {
 
   return (
     <View
-      className={` m-2 p-2 rounded-lg max-w-[80%]  ${
-        isMyMessage() ? "bg-emerald-100 self-end" : " bg-white self-start"
+      className={` m-2 p-2 rounded-lg max-w-[80%] shadow-sm  ${
+        isMyMessage() ? "bg-white self-start" : " bg-emerald-100  self-end"
       }`}>
       <Text>{message.text}</Text>
       <Text className="text-gray-500 self-end">
