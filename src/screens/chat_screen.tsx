@@ -8,6 +8,8 @@ export function ChatScreen() {
   return (
     <ImageBackground source={Background} className="flex-1">
       <FlatList
+        className="p-4"
+        inverted
         data={messages}
         renderItem={({ item }) => <Message message={item} />}
       />
