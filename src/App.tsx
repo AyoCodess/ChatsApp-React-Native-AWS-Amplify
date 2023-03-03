@@ -4,7 +4,7 @@ import { ChatScreen } from "./screens";
 
 export function Application() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
+    <View className="flex-1 justify-center bg-white py-16">
       <StatusBar style="auto" />
       <ChatScreen />
     </View>
