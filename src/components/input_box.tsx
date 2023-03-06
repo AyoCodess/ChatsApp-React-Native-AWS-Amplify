@@ -4,7 +4,7 @@ import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { onSendMessage } from "./../utils";
 
 export function InputBox() {
-  const [message, setMessage] = useState("");
+  const [newMessage, setNewMessage] = useState("");
 
   return (
     <View
@@ -12,13 +12,13 @@ export function InputBox() {
       style={{ backgroundColor: "whitesmoke" }}>
       <AntDesign name="plus" size={20} color="royalblue" />
       <TextInput
-        value={message}
-        onChangeText={setMessage}
+        value={newMessage}
+        onChangeText={setNewMessage}
         className="flex-1 border border-gray-200 placeholder-gray-500 rounded-xl p-2 text-black bg-white mx-2"
         placeholder="type"
       />
       <MaterialIcons
-        onPress={onSendMessage}
+        onPress={() => onSendMessage(newMessage)}
         name="send"
         size={16}
         color="white"

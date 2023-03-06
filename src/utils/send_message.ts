@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from "react";
 
-export function onSendMessage() {
-  console.warn("onSendMessage");
+export function onSendMessage(newMessage: string) {
+  console.warn(newMessage);
 }
