@@ -7,6 +7,7 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import {
   CompositeScreenProps,
   NavigatorScreenParams,
+  RouteProp,
 } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
@@ -20,7 +21,7 @@ declare global {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
-  chat_screen: undefined;
+  chat_screen: { id: string; name: string };
   chat_screens: undefined;
 };
 
@@ -30,7 +31,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 // BOTTOM TAB NAVIGATION
 
 export type RootTabParamList = {
-  chat_screen: undefined;
+  chat_screen: { id: string; name: string };
   chat_screens: undefined;
 };
 
@@ -39,3 +40,7 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
     BottomTabScreenProps<RootTabParamList, Screen>,
     NativeStackScreenProps<RootStackParamList>
   >;
+
+// ROUTE PARAMS
+
+export type ChatScreenRouteProp = RouteProp<RootStackParamList, "chat_screen">;

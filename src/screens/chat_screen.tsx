@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   View,
   Text,
@@ -10,8 +10,19 @@ import {
 import Background from "../../assets/images/BG.png";
 import { InputBox, Message } from "../components";
 import messages from "../../assets/data/messages.json";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { ChatScreenRouteProp } from "../navigation/types";
 
 export function ChatScreen() {
+  const navigation = useNavigation();
+  const route = useRoute<ChatScreenRouteProp>();
+  const { id, name } = route.params;
+
+  useEffect(() => {
+    navigation.setOptions({ headerTitle: name });
+    console.log(name);
+  }, [name]);
+
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}

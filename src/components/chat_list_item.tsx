@@ -1,7 +1,8 @@
 import React from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, Pressable } from "react-native";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { useNavigation } from "@react-navigation/native";
 dayjs.extend(relativeTime);
 
 type ChatListItemProps = {
@@ -23,13 +24,21 @@ type Chat = {
 };
 
 export function ChatListItem(props: ChatListItemProps) {
+  const navigation = useNavigation();
   const { chat } = props;
   if (!props) {
     return null;
   }
 
   return (
-    <View className="flex-row mx-3 my-2 h-16  ">
+    <Pressable
+      className="flex-row mx-3 my-2 h-16"
+      onPress={() =>
+        navigation.navigate("chat_screen", {
+          id: chat.id,
+          name: chat.user.name,
+        })
+      }>
       <Image
         className="w-12 h-12 rounded-full mr-2"
         source={{
@@ -49,6 +58,6 @@ export function ChatListItem(props: ChatListItemProps) {
           {chat.lastMessage.text}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 }
