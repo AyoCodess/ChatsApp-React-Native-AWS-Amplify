@@ -22,7 +22,13 @@ declare global {
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   chat_screen: { id: string; name: string };
-  chat_screens: undefined;
+  chat_list_screen: undefined;
+  home: any;
+  non_implemented_screen: undefined;
+  status_screen: undefined;
+  settings_screen: undefined;
+  camera_screen: undefined;
+  calls_screen: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
@@ -31,8 +37,8 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 // BOTTOM TAB NAVIGATION
 
 export type RootTabParamList = {
-  chat_screen: { id: string; name: string };
-  chat_screens: undefined;
+  non_implemented_screen: undefined;
+  chat_list_screen: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =

@@ -33,12 +33,12 @@ export function ChatListItem(props: ChatListItemProps) {
   return (
     <Pressable
       className="flex-row mx-3 my-2 h-16"
-      onPress={() =>
+      onPress={() => {
         navigation.navigate("chat_screen", {
           id: chat.id,
           name: chat.user.name,
-        })
-      }>
+        });
+      }}>
       <Image
         className="w-12 h-12 rounded-full mr-2"
         source={{

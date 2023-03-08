@@ -3,7 +3,7 @@ import chats from "../../assets/data/chats.json";
 import { FlatList } from "react-native";
 import { ChatListItem } from "../components";
 
-export function ChatScreens() {
+export function ChatListScreen() {
   return (
     <FlatList
       data={chats}
