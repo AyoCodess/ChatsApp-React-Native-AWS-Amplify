@@ -39,9 +39,10 @@ export function MainTabNavigation() {
         name="chat_list_screen"
         component={ChatListScreen}
         options={{
+          title: "Chats",
           headerTitle: "Chats",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="logo-whatsapp" color={color} size={size} />
+            <Ionicons name="ios-chatbubbles-sharp" color={color} size={size} />
           ),
         }}
       />
@@ -50,6 +51,7 @@ export function MainTabNavigation() {
         component={NonImplementedScreen}
         options={{
           headerTitle: "Calls",
+          title: "Calls",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="call-outline" color={color} size={size} />
           ),
@@ -60,6 +62,7 @@ export function MainTabNavigation() {
         component={NonImplementedScreen}
         options={{
           headerTitle: "Camera",
+          title: "Camera",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="camera-outline" color={color} size={size} />
           ),
@@ -70,8 +73,9 @@ export function MainTabNavigation() {
         component={NonImplementedScreen}
         options={{
           headerTitle: "Status",
+          title: "Status",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-chatbubbles-sharp" color={color} size={size} />
+            <Ionicons name="logo-whatsapp" color={color} size={size} />
           ),
         }}
       />
@@ -80,6 +84,7 @@ export function MainTabNavigation() {
         component={NonImplementedScreen}
         options={{
           headerTitle: "Settings",
+          title: "Settings",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="settings-outline" color={color} size={size} />
           ),
