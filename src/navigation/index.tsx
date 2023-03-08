@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootStackParamList } from "./types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 import React from "react";
 export function Navigation() {
@@ -43,6 +44,15 @@ export function MainTabNavigation() {
           headerTitle: "Chats",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-chatbubbles-sharp" color={color} size={size} />
+          ),
+          headerRight: () => (
+            <Entypo
+              className="mt-14"
+              name="new-message"
+              size={20}
+              color="royalblue"
+              style={{ marginRight: 14 }}
+            />
           ),
         }}
       />

@@ -2,12 +2,14 @@ import { View, Text, TextInput } from "react-native";
 import React, { useState } from "react";
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { onSendMessage } from "./../utils";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export function InputBox() {
   const [newMessage, setNewMessage] = useState("");
 
   return (
-    <View
+    <SafeAreaView
+      edges={["bottom"]}
       className="flex-row p-2 flex items-center"
       style={{ backgroundColor: "whitesmoke" }}>
       <AntDesign name="plus" size={20} color="royalblue" />
@@ -29,6 +31,6 @@ export function InputBox() {
           overflow: "hidden",
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 }

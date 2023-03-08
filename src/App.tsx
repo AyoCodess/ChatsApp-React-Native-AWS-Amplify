@@ -7,7 +7,7 @@ export function Application() {
   return (
     <View
       style={{ backgroundColor: "whitesmoke" }}
-      className="flex-1 justify-center py-16">
+      className="flex-1 justify-center">
       <StatusBar style="auto" />
       <Navigation />
     </View>

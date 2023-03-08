@@ -26,7 +26,7 @@ export function ChatScreen() {
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
-      keyboardVerticalOffset={Platform.OS === "android" ? 180 : 110}
+      keyboardVerticalOffset={Platform.OS === "android" ? 90 : 60}
       behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <ImageBackground source={Background} className="flex-1">
         <FlatList
