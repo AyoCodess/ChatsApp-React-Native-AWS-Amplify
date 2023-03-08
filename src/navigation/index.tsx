@@ -1,5 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { ChatListScreen, ChatScreen, NonImplementedScreen } from "../screens";
+import {
+  ChatListScreen,
+  ChatScreen,
+  ContactsScreen,
+  NonImplementedScreen,
+} from "../screens";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootStackParamList } from "./types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -16,6 +21,14 @@ export function Navigation() {
           name="home"
           component={MainTabNavigation}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="contacts_screen"
+          component={ContactsScreen}
+          options={{
+            title: "Contacts",
+            headerTitle: "Contacts",
+          }}
         />
         <Stack.Screen
           name="chat_screen"
@@ -39,7 +52,7 @@ export function MainTabNavigation() {
       <Tab.Screen
         name="chat_list_screen"
         component={ChatListScreen}
-        options={{
+        options={({ navigation }) => ({
           title: "Chats",
           headerTitle: "Chats",
           tabBarIcon: ({ color, size }) => (
@@ -47,6 +60,7 @@ export function MainTabNavigation() {
           ),
           headerRight: () => (
             <Entypo
+              onPress={() => navigation.navigate("contacts_screen")}
               className="mt-14"
               name="new-message"
               size={20}
@@ -54,7 +68,7 @@ export function MainTabNavigation() {
               style={{ marginRight: 14 }}
             />
           ),
-        }}
+        })}
       />
       <Tab.Screen
         name="calls_screen"

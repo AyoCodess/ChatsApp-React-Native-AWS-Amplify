@@ -29,6 +29,7 @@ export type RootStackParamList = {
   settings_screen: undefined;
   camera_screen: undefined;
   calls_screen: undefined;
+  contacts_screen: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
