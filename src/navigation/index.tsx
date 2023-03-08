@@ -1,4 +1,3 @@
-import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { ChatListScreen, ChatScreen, NonImplementedScreen } from "../screens";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -6,6 +5,7 @@ import { RootStackParamList } from "./types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
+import React from "react";
 export function Navigation() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
   return (
@@ -29,12 +29,17 @@ export function Navigation() {
 export function MainTabNavigation() {
   const Tab = createBottomTabNavigator<RootStackParamList>();
   return (
-    <Tab.Navigator initialRouteName="chat_list_screen">
+    <Tab.Navigator
+      initialRouteName="chat_list_screen"
+      screenOptions={{
+        tabBarStyle: { backgroundColor: "whitesmoke" },
+        headerStyle: { backgroundColor: "whitesmoke" },
+      }}>
       <Tab.Screen
-        name="status_screen"
-        component={NonImplementedScreen}
+        name="chat_list_screen"
+        component={ChatListScreen}
         options={{
-          headerTitle: "Status",
+          headerTitle: "Chats",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="logo-whatsapp" color={color} size={size} />
           ),
@@ -61,22 +66,22 @@ export function MainTabNavigation() {
         }}
       />
       <Tab.Screen
+        name="status_screen"
+        component={NonImplementedScreen}
+        options={{
+          headerTitle: "Status",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ios-chatbubbles-sharp" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="settings_screen"
         component={NonImplementedScreen}
         options={{
           headerTitle: "Settings",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="settings-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="chat_list_screen"
-        component={ChatListScreen}
-        options={{
-          headerTitle: "Chats",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="logo-whatsapp" color={color} size={size} />
           ),
         }}
       />
